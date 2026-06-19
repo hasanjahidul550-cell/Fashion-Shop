@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXORA — Premium Fashion</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">LUXORA</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search" id="search-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart" id="cart-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="search-bar">
+      <input type="text" placeholder="Search for styles, brands, collections…" id="search-input" />
+      <button class="search-close" id="search-close">✕</button>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cart-close">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="btn-primary full-width">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&q=80&auto=format&fit=crop" alt="Fashion Model" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow reveal">New Season 2025</span>
+      <h1 class="hero-headline reveal">
+        <span class="line">Dress the</span>
+        <span class="line italic">Story</span>
+        <span class="line">You Live</span>
+      </h1>
+      <p class="hero-sub reveal">Curated luxury fashion for those who refuse to blend in.</p>
+      <div class="hero-cta reveal">
+        <a href="#products" class="btn-primary">Shop the Collection</a>
+        <a href="#collection" class="btn-ghost">Explore Lookbook</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><strong>12K+</strong><span>Happy Clients</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>500+</strong><span>Curated Pieces</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>40+</strong><span>Global Brands</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FEATURED COLLECTION ══════════════════════ -->
+  <section class="collection" id="collection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Curated For You</span>
+        <h2 class="section-title">Featured Collection</h2>
+        <p class="section-sub">Explore our handpicked selections crafted for every style story.</p>
+      </div>
+
+      <div class="collection-grid">
+        <div class="collection-card large reveal-up" data-target="mens">
+          <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80&auto=format&fit=crop" alt="Men's Fashion" />
+          <div class="collection-info">
+            <span class="collection-tag">Men's Fashion</span>
+            <h3>The Modern Gentleman</h3>
+            <a href="#products" class="collection-link">Explore →</a>
+          </div>
+        </div>
+        <div class="collection-card reveal-up" data-target="womens">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80&auto=format&fit=crop" alt="Women's Fashion" />
+          <div class="collection-info">
+            <span class="collection-tag">Women's Fashion</span>
+            <h3>Effortless Elegance</h3>
+            <a href="#products" class="collection-link">Explore →</a>
+          </div>
+        </div>
+        <div class="collection-card reveal-up" data-target="new">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop" alt="New Arrivals" />
+          <div class="collection-info">
+            <span class="collection-tag new-badge">New Arrivals</span>
+            <h3>Just Landed</h3>
+            <a href="#products" class="collection-link">Explore →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ PRODUCT GRID ══════════════════════════════ -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Selection</span>
+        <h2 class="section-title">Shop the Edit</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="mens">Men's</button>
+        <button class="filter-tab" data-filter="womens">Women's</button>
+        <button class="filter-tab" data-filter="new">New Arrivals</button>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <!-- Products injected by JS -->
+      </div>
+
+      <div class="load-more-wrap">
+        <button class="btn-outline" id="load-more">Load More Styles</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CATEGORIES ═══════════════════════════════ -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Browse By</span>
+        <h2 class="section-title">Shop By Category</h2>
+      </div>
+
+      <div class="cat-grid">
+        <div class="cat-card reveal-up">
+          <div class="cat-icon">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=80&auto=format&fit=crop" alt="T-Shirts" />
+          </div>
+          <h4>T-Shirts</h4>
+          <span>42 items</span>
+        </div>
+        <div class="cat-card reveal-up">
+          <div class="cat-icon">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80&auto=format&fit=crop" alt="Hoodies" />
+          </div>
+          <h4>Hoodies</h4>
+          <span>28 items</span>
+        </div>
+        <div class="cat-card reveal-up">
+          <div class="cat-icon">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80&auto=format&fit=crop" alt="Shoes" />
+          </div>
+          <h4>Shoes</h4>
+          <span>65 items</span>
+        </div>
+        <div class="cat-card reveal-up">
+          <div class="cat-icon">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80&auto=format&fit=crop" alt="Accessories" />
+          </div>
+          <h4>Accessories</h4>
+          <span>90 items</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ WHY US SECTION ════════════════════════════ -->
+  <section class="why-us">
+    <div class="why-us-inner">
+      <div class="why-bg-text">LUXORA</div>
+      <div class="container">
+        <div class="section-header light">
+          <span class="section-tag gold">Our Promise</span>
+          <h2 class="section-title">Why Choose Luxora</h2>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal-up">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <h4>Fast Delivery</h4>
+            <p>Express shipping to your door within 2–3 business days. Track your parcel in real time.</p>
+          </div>
+          <div class="why-card reveal-up">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Premium Quality</h4>
+            <p>Every piece passes a 20-point quality check. We only carry what we'd wear ourselves.</p>
+          </div>
+          <div class="why-card reveal-up">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h4>Secure Payment</h4>
+            <p>SSL-encrypted checkout with 12+ payment methods. Your data stays yours, always.</p>
+          </div>
+          <div class="why-card reveal-up">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            </div>
+            <h4>Free Returns</h4>
+            <p>30-day hassle-free returns on all orders. No questions, no complications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ MARQUEE BANNER ═══════════════════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>New Season Drop</span>
+      <span class="gold-dot">✦</span>
+      <span>Free Shipping Over $150</span>
+      <span class="gold-dot">✦</span>
+      <span>Premium Quality Guaranteed</span>
+      <span class="gold-dot">✦</span>
+      <span>Limited Edition Pieces</span>
+      <span class="gold-dot">✦</span>
+      <span>New Season Drop</span>
+      <span class="gold-dot">✦</span>
+      <span>Free Shipping Over $150</span>
+      <span class="gold-dot">✦</span>
+      <span>Premium Quality Guaranteed</span>
+      <span class="gold-dot">✦</span>
+      <span>Limited Edition Pieces</span>
+      <span class="gold-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ REVIEWS ══════════════════════════════════ -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+
+      <div class="review-carousel">
+        <div class="review-track" id="review-track">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Luxora completely transformed how I think about getting dressed. The quality is unmatched — I've gotten more compliments this season than ever before."</blockquote>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&auto=format&fit=crop&faces=true&facepad=2" alt="Sofia R." />
+              <div>
+                <strong>Sofia R.</strong>
+                <span>Fashion Blogger, NYC</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Finally a fashion brand that treats me like an adult. The pieces are sophisticated without trying too hard. My wardrobe has never looked this intentional."</blockquote>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80&auto=format&fit=crop&faces=true&facepad=2" alt="James T." />
+              <div>
+                <strong>James T.</strong>
+                <span>Creative Director, London</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"The packaging alone tells you this brand cares. Delivery was faster than expected and the fit guide was spot on. I'm a repeat customer for life."</blockquote>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80&auto=format&fit=crop&faces=true&facepad=2" alt="Amara L." />
+              <div>
+                <strong>Amara L.</strong>
+                <span>Stylist, Paris</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Every piece I've ordered from Luxora has that rare quality of feeling expensive without being ostentatious. Real luxury is about subtlety, and they get it."</blockquote>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop&faces=true&facepad=2" alt="Marco V." />
+              <div>
+                <strong>Marco V.</strong>
+                <span>Architect, Milan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" id="review-prev">←</button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <button class="carousel-btn next" id="review-next">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ NEWSLETTER ═══════════════════════════════ -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="newsletter-content reveal">
+        <span class="section-tag gold">Stay in the Loop</span>
+        <h2>Get First Access to<br /><em>New Collections</em></h2>
+        <p>Subscribe and receive 15% off your first order, plus early access to drops and exclusive member events.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <small>No spam. Unsubscribe at any time.</small>
+      </div>
+      <div class="newsletter-img reveal">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Newsletter fashion" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACT ══════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-sub">Questions about a piece, a styling consult, or a collaboration? We're here.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info reveal-up">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>Visit Us</strong>
+              <span>14 Bond Street, London W1S 1DA</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <strong>Email Us</strong>
+              <span>hello@luxorafashion.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9c1.91 3.28 4.63 6 7.91 7.91l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 17z"/></svg>
+            <div>
+              <strong>Call Us</strong>
+              <span>+44 20 7946 0301</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram" class="social-link">Ig</a>
+            <a href="#" aria-label="Pinterest" class="social-link">Pt</a>
+            <a href="#" aria-label="TikTok" class="social-link">Tk</a>
+            <a href="#" aria-label="Twitter" class="social-link">Tw</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-up" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>General Enquiry</option>
+              <option>Order Support</option>
+              <option>Styling Advice</option>
+              <option>Press & Collaboration</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell us how we can help…"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo">LUXORA</a>
+            <p>Premium fashion for those who see clothing as a language — and wear it fluently.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.78 1.24-5.26 1.24-5.26s-.32-.63-.32-1.57c0-1.47.85-2.57 1.91-2.57.9 0 1.34.67 1.34 1.48 0 .9-.58 2.26-.87 3.52-.25 1.05.52 1.9 1.54 1.9 1.85 0 3.28-1.95 3.28-4.77 0-2.49-1.79-4.23-4.35-4.23-2.96 0-4.7 2.22-4.7 4.52 0 .9.35 1.85.78 2.38.09.1.1.19.07.3-.08.32-.25 1.05-.28 1.19-.05.19-.16.23-.38.14-1.39-.65-2.26-2.68-2.26-4.31 0-3.51 2.55-6.73 7.35-6.73 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.41 6.91-5.76 6.91-1.12 0-2.18-.58-2.54-1.27l-.69 2.59c-.25.96-.93 2.17-1.39 2.9C11 21.94 11.49 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h5>Shop</h5>
+            <ul>
+              <li><a href="#">Men's Collection</a></li>
+              <li><a href="#">Women's Collection</a></li>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Sale</a></li>
+              <li><a href="#">Lookbook</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Help</h5>
+            <ul>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#">About Luxora</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Affiliates</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 LUXORA Fashion. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
